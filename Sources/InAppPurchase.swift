@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct InAppPurchase
+public struct InAppPurchaseT
 {
 	public enum `Type`: Int32
 	{
@@ -70,7 +70,7 @@ public struct InAppPurchase
     public var quantity: Int = 1
 }
 
-public extension InAppPurchase
+public extension InAppPurchaseT
 {
     /// A Boolean value indicating whether the purchase is renewable subscription.
     var isRenewableSubscription: Bool
