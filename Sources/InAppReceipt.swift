@@ -39,7 +39,7 @@ public struct InAppReceiptField
 	static let promotionalOfferIdentifier: Int32 = 1721
 }
 
-public class InAppReceipt
+public class InAppReceiptT
 {
     /// PKCS7 container
     internal var receipt: _InAppReceipt
@@ -82,7 +82,7 @@ public class InAppReceipt
     }
 }
 
-public extension InAppReceipt
+public extension InAppReceiptT
 {
     /// The app’s bundle identifier
     var bundleIdentifier: String
@@ -260,7 +260,7 @@ public extension InAppReceipt
     }
 }
 
-internal extension InAppReceipt
+internal extension InAppReceiptT
 {
     /// Used to validate the receipt
     var bundleIdentifierData: Data
@@ -281,7 +281,7 @@ internal extension InAppReceipt
     }
 }
 
-public extension InAppReceipt
+public extension InAppReceiptT
 {
 	/// signature for validation
 	var signature: Data?

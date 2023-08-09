@@ -129,7 +129,7 @@ public extension SKProductsResponse
 
 @available(tvOS 12.0, *)
 @available(macOS 10.14, *)
-public extension InAppReceipt
+public extension InAppReceiptT
 {
     
 	///  Refresh local in-app receipt
@@ -147,7 +147,7 @@ public extension InAppReceipt
         refreshSession = RefreshSession()
         refreshSession!.refresh { (error) in
             completion(error)
-            InAppReceipt.destroyRefreshSession()
+          InAppReceiptT.destroyRefreshSession()
         }
     }
 
@@ -240,7 +240,7 @@ fileprivate class RefreshSession : NSObject, SKRequestDelegate
 
 public typealias SubscriptionGroup = Set<String>
 
-public extension InAppReceipt
+public extension InAppReceiptT
 {
 	/// Check whether user is eligible for introductory offer for any products within the same subscription group
 	///

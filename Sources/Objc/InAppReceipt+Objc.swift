@@ -13,7 +13,7 @@ import TPInAppReceipt
 
 @objc(InAppReceipt) public class InAppReceipt_Objc: NSObject
 {
-	private var wrappedReceipt: InAppReceipt
+	private var wrappedReceipt: InAppReceiptT
 	
 	/// Creates and returns the 'InAppReceipt' instance from data object
 	///
@@ -60,7 +60,7 @@ import TPInAppReceipt
 	/// - parameter receiptData: `Data` object that represents receipt
 	@objc public init(receiptData: Data, rootCertPath: String? = nil) throws
 	{
-		self.wrappedReceipt = try InAppReceipt.init(receiptData: receiptData, rootCertPath: rootCertPath)
+		self.wrappedReceipt = try InAppReceiptT.init(receiptData: receiptData, rootCertPath: rootCertPath)
 	}
 }
 

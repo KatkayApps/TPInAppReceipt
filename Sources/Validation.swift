@@ -19,7 +19,7 @@ import Cocoa
 import CommonCrypto
 
 /// A InAppReceipt extension helps to validate the receipt
-public extension InAppReceipt
+public extension InAppReceiptT
 {
 	/// Determine whether receipt is valid or not
 	///

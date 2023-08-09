@@ -9,25 +9,25 @@
 import Foundation
 
 /// An InAppReceipt extension helps to initialize the receipt
-public extension InAppReceipt
+public extension InAppReceiptT
 {
     /// Creates and returns the 'InAppReceipt' instance from data object
     ///
     /// - Returns: 'InAppReceipt' instance
     /// - throws: An error in the InAppReceipt domain, if `InAppReceipt` cannot be created.
-    static func receipt(from data: Data) throws -> InAppReceipt
+    static func receipt(from data: Data) throws -> InAppReceiptT
     {
-        return try InAppReceipt(receiptData: data)
+        return try InAppReceiptT(receiptData: data)
     }
     
     /// Creates and returns the 'InAppReceipt' instance using local receipt
     ///
     /// - Returns: 'InAppReceipt' instance
     /// - throws: An error in the InAppReceipt domain, if `InAppReceipt` cannot be created.
-    static func localReceipt() throws -> InAppReceipt
+    static func localReceipt() throws -> InAppReceiptT
     {
         let data = try Bundle.main.appStoreReceiptData()
-        return try InAppReceipt.receipt(from: data)
+        return try InAppReceiptT.receipt(from: data)
     }
     
 }
