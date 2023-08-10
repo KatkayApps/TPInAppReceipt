@@ -245,7 +245,7 @@ import TPInAppReceipt
 
 // MARK: - InAppPurchase
 
-@objc(InAppPurchase) public class InAppPurchase_Objc: NSObject
+@objc(InAppPurchaseT) public class InAppPurchase_Objc: NSObject
 {
 	@objc public enum `Type`: Int32
 	{
@@ -265,7 +265,7 @@ import TPInAppReceipt
 		case autoRenewableSubscription
 	}
 	
-	private let purchase: InAppPurchase
+	private let purchase: InAppPurchaseT
 	
 	/// The product identifier which purchase related to
 	@objc public var productIdentifier: String { purchase.productIdentifier }
@@ -308,7 +308,7 @@ import TPInAppReceipt
 	/// The default value is `1` unless modified with a mutable payment. The maximum value is 10.
 	@objc public var quantity: Int { purchase.quantity }
 	
-	init(purchase: InAppPurchase)
+	init(purchase: InAppPurchaseT)
 	{
 		self.purchase = purchase
 	}

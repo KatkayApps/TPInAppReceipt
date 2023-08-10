@@ -12,7 +12,7 @@ import ASN1Swift
 struct InAppReceiptPayload
 {
     /// In-app purchase's receipts
-	let purchases: [InAppPurchase]
+	let purchases: [InAppPurchaseT]
     
     /// The app’s bundle identifier
 	let bundleIdentifier: String
@@ -49,7 +49,7 @@ struct InAppReceiptPayload
 	
     /// Initialize a `InAppReceipt` passing all values
     ///
-	init(bundleIdentifier: String, appVersion: String, originalAppVersion: String, purchases: [InAppPurchase], expirationDate: Date?, bundleIdentifierData: Data, opaqueValue: Data, receiptHash: Data, creationDate: Date, ageRating: String, environment: String, rawData: Data)
+	init(bundleIdentifier: String, appVersion: String, originalAppVersion: String, purchases: [InAppPurchaseT], expirationDate: Date?, bundleIdentifierData: Data, opaqueValue: Data, receiptHash: Data, creationDate: Date, ageRating: String, environment: String, rawData: Data)
     {
         self.bundleIdentifier = bundleIdentifier
         self.appVersion = appVersion

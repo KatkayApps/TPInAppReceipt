@@ -105,7 +105,7 @@ extension InAppReceiptPayload: ASN1Decodable
 		var bundleIdentifierData = Data()
 		var appVersion = ""
 		var originalAppVersion = ""
-		var purchases = [InAppPurchase]()
+		var purchases = [InAppPurchaseT]()
 		var opaqueValue = Data()
 		var receiptHash = Data()
 		var expirationDate: Date?
@@ -137,7 +137,7 @@ extension InAppReceiptPayload: ASN1Decodable
 				case InAppReceiptField.receiptHash:
 					receiptHash = valueContainer.valueData
 				case InAppReceiptField.inAppPurchaseReceipt:
-					purchases.append(try valueContainer.decode(InAppPurchase.self))
+					purchases.append(try valueContainer.decode(InAppPurchaseT.self))
 				case InAppReceiptField.originalAppVersion:
 					originalAppVersion = try valueContainer.decode(String.self)
 				case InAppReceiptField.expirationDate:
@@ -173,7 +173,7 @@ extension InAppReceiptPayload: ASN1Decodable
 	}
 }
 
-extension InAppPurchase: ASN1Decodable
+extension InAppPurchaseT: ASN1Decodable
 {
 	public init(from decoder: Decoder) throws
 	{
